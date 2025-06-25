@@ -2,12 +2,12 @@
  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" lang="es-es" class="css-transform-support">
 <head>
  <!--next lets load hero image before the transcend -->
- <!-- Preload hero image 
+ <!-- Preload hero image with high fetch priority 
     Tells the browser early (in the HTML parse phase) that this image is high-priority.
     It lets the browser fetch it ASAP, ahead of layout or CSS parsing delays.
     Likely improves LCP (especially if this hero image was your LCP candidate element in Web Vitals)-->
 		
- <link rel="preload" as="image" href="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1034661683%2F211197148315%2F1%2Foriginal.20250520-063235?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C106%2C1280%2C640&s=2f88156dcef0192d90ba260439b32f4d">
+ <link rel="preload" as="image" href="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1034661683%2F211197148315%2F1%2Foriginal.20250520-063235?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C106%2C1280%2C640&s=2f88156dcef0192d90ba260439b32f4d" fetchpriority="high">
      
 <!-- Hero image Critical CSS using https://www.corewebvitals.io/tools/critical-css-generator
 	Renders above-the-fold content without waiting for external CSS files.
