@@ -1,11 +1,18 @@
 <!DOCTYPE html>
  <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" lang="es-es" class="css-transform-support">
 <head>
- <!-- Preload hero image -->
+ <!-- Preload hero image 
+    Tells the browser early (in the HTML parse phase) that this image is high-priority.
+    It lets the browser fetch it ASAP, ahead of layout or CSS parsing delays.
+    Likely improves LCP (especially if this hero image was your LCP candidate element in Web Vitals)-->
 		
  <link rel="preload" as="image" href="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1034661683%2F211197148315%2F1%2Foriginal.20250520-063235?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C106%2C1280%2C640&s=2f88156dcef0192d90ba260439b32f4d">
      
-<!-- Hero image Critical CSS using https://www.corewebvitals.io/tools/critical-css-generator -->
+<!-- Hero image Critical CSS using https://www.corewebvitals.io/tools/critical-css-generator
+	Renders above-the-fold content without waiting for external CSS files.
+	Reduces render-blocking round trips, especially helpful on slow connections.
+	Improves First Contentful Paint (FCP), LCP, and render start time.
+	Ideal when paired with deferred non-critical stylesheets (see below).-->
      <style>
     *{box-sizing:border-box;padding:0;margin:0}
     body,html{max-width:100vw;overflow-x:hidden}
@@ -39,7 +46,12 @@
     .css-sji9w3 img{max-width:940px;width:100%;height:auto}
   </style>
 
-<!-- Preload css with this.rel -->
+<!-- Preload css with this.rel
+Signals to the browser early that these CSS files will be needed.
+They’re fetched in parallel during page parsing (earlier than normal stylesheet discovery).
+The onload="this.rel='stylesheet'" makes them non-blocking for render until loaded.
+The <noscript> ensures graceful degradation for users without JS.
+This reduces render-blocking CSS delays, improving FCP/LCP without sacrificing styling integrity.-->
 
 <link rel="preload" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.11--eds-4.3.111.css" as="style" onload="this.rel='stylesheet'"/>
 <noscript> <link  rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.11--eds-4.3.111.css" /></noscript>
@@ -48,7 +60,6 @@
 <link rel="preload" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css"  as="style" onload="this.rel='stylesheet'"/>
 <noscript><link  rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css" /></noscript>
 	
-
 
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
