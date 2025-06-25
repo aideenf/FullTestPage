@@ -53,11 +53,11 @@ The onload="this.rel='stylesheet'" makes them non-blocking for render until load
 The <noscript> ensures graceful degradation for users without JS.
 This reduces render-blocking CSS delays, improving FCP/LCP without sacrificing styling integrity.-->
 
-<link rel="preload" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.11--eds-4.3.111.css" as="style" onload="this.rel='stylesheet'"/>
+<link rel="preload" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.11--eds-4.3.111.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript> <link  rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.11--eds-4.3.111.css" /></noscript>
-<link rel="preload" href="https://cdn.evbstatic.com/s3-build/fe/build/listings.2a4ae71e2f8837a7f61e.css" as="style" onload="this.rel='stylesheet'"/>
+<link rel="preload" href="https://cdn.evbstatic.com/s3-build/fe/build/listings.2a4ae71e2f8837a7f61e.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link  rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/fe/build/listings.2a4ae71e2f8837a7f61e.css" /></noscript>
-<link rel="preload" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css"  as="style" onload="this.rel='stylesheet'"/>
+<link rel="preload" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css"  as="style"onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link  rel="stylesheet" type="text/css" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css" /></noscript>
 	
 
