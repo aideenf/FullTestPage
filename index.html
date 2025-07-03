@@ -177,17 +177,17 @@ window.EB.TranscendConsent = (function () {
 	gtag('set', 'developer_id.dOGRkZj', true);
 	// Passing ad click, client ID, and session ID information in URLs
 	gtag('set', 'url_passthrough', true);
-</script>
-<!-- Transcend Consent Airgap Code-->
-	<script
-		data-cfasync="false"
-		src="https://cdntranscend.eventbrite.com/cm/f2747157-cf59-4ef1-8703-018defe51764/airgap.js"
-		data-sync-endpoint="https://synctranscend.eventbrite.com/consent-manager/f2747157-cf59-4ef1-8703-018defe51764"
-		data-ui-z-index="550"
-		data-tracker-overrides="[...] GoogleConsentMode:security_storage=Essential"
-		data-protect-realms="self"
-		data-ui-shadow-root="open"
-		data-local-sync="allow-network-observable"
+</script
+<script>
+function loadAirgapScript() {
+  const script = document.createElement('script');
+  script.src = 'https://cdntranscend.eventbrite.com/cm/f2747157-cf59-4ef1-8703-018defe51764/airgap.js';
+  script.setAttribute('data-cfasync', 'false');
+  script.setAttribute('data-sync-endpoint', 'https://synctranscend.eventbrite.com/consent-manager/f2747157-cf59-4ef1-8703-018defe51764');
+  script.setAttribute('data-ui-z-index', '550');
+  // add other data-* attributes here as needed
+  document.head.appendChild(script);
+}
 ></script>
 <!-- END Transcend Consent Airgap Code -->
 <script>
@@ -302,7 +302,8 @@ window.EB.TranscendConsent = (function () {
   fetchpriority="high"
   decoding="async"
   loading="eager"
-  data-testid="hero-img">
+  data-testid="hero-img"
+  onload="loadAirgapScript()">
 	
 	</picture></div><div data-testid="slide" aria-hidden="true" class="css-6dsmqv e1kx2rja3"><picture data-testid="hero-image"><source srcSet="
 					https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1033662333%2F2142623172483%2F1%2Foriginal.20250519-011843?w=480&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C138%2C2048%2C1024&amp;s=1396cbc32e11c6bd5aeb7c75278c2afc 480w,
