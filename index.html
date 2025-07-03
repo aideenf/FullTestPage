@@ -1,92 +1,31 @@
 <!DOCTYPE html>
 <head>
-  <meta charset="utf-8" />
-  <!-- Preconnect for CDNs (critical resources only) -->
+  
+  <!-- Preconnect to critical origins early -->
   <link rel="preconnect" href="https://img.evbuc.com" crossorigin>
-  <link rel="dns-prefetch" href="https://img.evbuc.com">
   <link rel="preconnect" href="https://cdn.evbstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://img.evbuc.com">
   <link rel="dns-prefetch" href="https://cdn.evbstatic.com">
-  <!-- Preload LCP image early -->
-  <link rel="preload" as="image" type="image/avif" fetchpriority="high" href="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1059175013%2F2142623172483%2F1%2Foriginal.20250624-034948?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.438446969697&fp-y=0.574626865672&s=b56b48beeb2e1f096cafe5342b9518cc">
-  <!-- Preload critical CSS -->
-  <link rel="preload" as="style" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css"></noscript>
 
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high" href="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1059175013%2F2142623172483%2F1%2Foriginal.20250624-034948?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.438446969697&fp-y=0.574626865672&s=b56b48beeb2e1f096cafe5342b9518cc">
+
+  <!-- Preload CSS non-blocking -->
   <link rel="preload" as="style" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.16--eds-4.3.113.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.16--eds-4.3.113.css"></noscript>
 
   <link rel="preload" as="style" href="https://cdn.evbstatic.com/s3-build/fe/build/listings.9978dfcd9d45b0bd7e76.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdn.evbstatic.com/s3-build/fe/build/listings.9978dfcd9d45b0bd7e76.css"></noscript>
 
-  <!-- Viewport and meta -->
-  <meta name="viewport" content="initial-scale=1, width=device-width">
-  <meta name="description" content="Eventbrite - SEADECK presents CHRISTMAS IN JULY: SATURDAY WINTER WONDERLAND - Saturday, July 12, 2025 at King Street Wharf 9, Sydney, NSW. Find event and ticket information." />
-  <meta name="keywords" content="Eventbrite, CHRISTMAS IN JULY: SATURDAY WINTER WONDERLAND, tickets, Sydney, cruise, harbour" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta http-equiv="Content-Language" content="en" />
-  
-  <!-- Canonical and social sharing -->
-  <link rel="canonical" href="https://www.eventbrite.com.au/e/christmas-in-july-saturday-winter-wonderland-tickets-1392143270999" />
-  <link rel="alternate" href="android-app://com.eventbrite.attendee/http/www.eventbrite.com/e/1392143270999" />
-  
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/prod/1983774-rc2025-07-02_20.04-py27-1d5b91e/django/images/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/prod/1983774-rc2025-07-02_20.04-py27-1d5b91e/django/images/favicons/favicon-194x194.png" sizes="194x194">
-  <link rel="shortcut icon" href="https://cdn.evbstatic.com/s3-build/prod/1983774-rc2025-07-02_20.04-py27-1d5b91e/django/images/favicons/favicon.ico">
+  <link rel="preload" as="style" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.evbstatic.com/s3-build/fe/build/vendor.94f6572c87ef6aa01d09.css"></noscript>
 
-  <!-- Theme and manifest -->
-  <meta name="theme-color" content="#f6682f">
-  <link rel="manifest" href="https://cdn.evbstatic.com/s3-build/prod/1983774-rc2025-07-02_20.04-py27-1d5b91e/django/images/favicons/manifest.webmanifest">
-  <link rel="apple-touch-icon" href="https://cdn.evbstatic.com/s3-build/prod/1983774-rc2025-07-02_20.04-py27-1d5b91e/django/images/touch_icons/apple-touch-icon-180x180.png">
-
-  <!-- Preconnect for third-party scripts (moved down — defer until later if needed) -->
-  <!-- Add these only if strictly needed -->
-  <!--
+  <!-- Preconnect to 3P domains -->
   <link rel="preconnect" href="https://cdn.branch.io">
   <link rel="dns-prefetch" href="https://cdn.branch.io">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-  -->
-
-  <!-- Inline font loading logic -->
-  <script type="text/javascript">/* your font scripts */</script>
-
-  <!-- Inline config for Transcend consent and airgap -->
-  <script type="text/javascript">/* your consent code */</script>
-
-<link rel="canonical" href="https://www.eventbrite.com.au/e/christmas-in-july-saturday-winter-wonderland-tickets-1392143270999" />
-<link rel="alternate" href="android-app://com.eventbrite.attendee/http/www.eventbrite.com/e/1392143270999" />
-<meta name="y_key" content="d92e23811007b438">
-<meta name="msvalidate.01" content="A9AB07B7E430E4608E0BC57AFA5004AA" />
-<!--
-  img is loaded like this... <img
-  class="css-to8hnk eyu62kx0"
-  alt="CHRISTMAS IN JULY: SATURDAY WINTER WONDERLAND"
-  src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1059175013%2F2142623172483%2F1%2Foriginal.20250624-034948?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.438446969697&fp-y=0.574626865672&s=b56b48beeb2e1f096cafe5342b9518cc"
-  fetchpriority="high"
-  decoding="async"
-  loading="eager"
-  data-testid="hero-img"
-/>  ++++++++++++++++++++++++++++++++++
-          ++++++++++++++++++++++++++++++++++
-          +++++++++.              .+++++++++
-          +++++++.                   :++++++
-          +++++       ++++++++++      .+++++
-          ++++      +++++++++++++      .++++
-          ++++     +++++++++++++        ++++
-          +++;     +++               +++++++
-          +++:             +++++++++++++++++
-          ++++.      ,++++++++++++++++++++++
-          +++++      +++++++++++++ +++++++++
-          +++++++      ++++++++      +++++++
-          +++++++++                +++++++++
-          +++++++++++.          ++++++++++++
-          ++++++++++++++++++++++++++++++++++
-          ++++++++++++++++++++++++++++++++++
-          
-Want to be part of the team behind the source code? We're hiring!
-Check us out at https://www.eventbrite.com/careers
--->
+	
 <meta name="robots" content="index, follow, " />
 	<link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/prod/1983774-rc2025-07-02_20.04-py27-1d5b91e/django/images/favicons/favicon-32x32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/prod/1983774-rc2025-07-02_20.04-py27-1d5b91e/django/images/favicons/favicon-194x194.png" sizes="194x194">
