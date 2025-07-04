@@ -11,12 +11,16 @@
   <link rel="preconnect" href="https://eventbrite-495691932.imgix.net" crossorigin>
 
   <!-- Preconnect to critical origins early -->
+  <link rel="preconnect" href="https://cdntranscend.eventbrite.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdntranscend.eventbrite.com">
   <link rel="preconnect" href="https://img.evbuc.com" crossorigin>
   <link rel="preconnect" href="https://cdn.evbstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://img.evbuc.com">
   <link rel="dns-prefetch" href="https://cdn.evbstatic.com">
 
- 
+
+
+
   <!-- Preload CSS non-blocking -->
   <link rel="preload" as="style" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.16--eds-4.3.113.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdn.evbstatic.com/s3-build/fe/build/listings--8.12.16--eds-4.3.113.css"></noscript>
@@ -32,6 +36,44 @@
   <link rel="dns-prefetch" href="https://cdn.branch.io">
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+  <!-- Transcend Consent Airgap Code-->
+	<script
+		data-cfasync="false"
+		src="https://cdntranscend.eventbrite.com/cm/f2747157-cf59-4ef1-8703-018defe51764/airgap.js"
+		data-sync-endpoint="https://synctranscend.eventbrite.com/consent-manager/f2747157-cf59-4ef1-8703-018defe51764"
+		data-ui-z-index="550"
+		data-tracker-overrides="[...] GoogleConsentMode:security_storage=Essential"
+		data-protect-realms="self"
+		data-ui-shadow-root="open"
+		data-local-sync="allow-network-observable"
+></script>
+<!-- END Transcend Consent Airgap Code -->
+<script>
+	const regimes = window.airgap && window.airgap.getRegimes ? window.airgap.getRegimes() : null;
+	const defaultRegime = regimes ? regimes.values().next().value : "CPRA";
+	console.log("Regime detected is "+ defaultRegime + ", loading transcend")
+	if (!EB.TranscendConsent.shouldDisableTranscend()) {
+	  try{
+		// Add the event listener
+		window.airgap.addEventListener(
+		  'sync',
+		  () => {
+			console.log("Sync done: Show banner")
+			window.transcend.ready((transcend) => {
+			  transcend.autoShowConsentManager();
+			})
+		  },
+		  { once: true } // we only want this to run on initial sync
+		);
+	  }catch(error) {
+		console.error("Failed to sync and load the banner")
+	  }  
+	} else {
+			console.log("Do not show banner")
+	}
+	dataLayer.push({ event: "transcendLoaded" });
+</script>
 	
 <meta name="robots" content="index, follow, " />
 	<link rel="icon" type="image/png" href="https://cdn.evbstatic.com/s3-build/prod/1983774-rc2025-07-02_20.04-py27-1d5b91e/django/images/favicons/favicon-32x32.png" sizes="32x32">
@@ -190,43 +232,7 @@ window.EB.TranscendConsent = (function () {
 	// Passing ad click, client ID, and session ID information in URLs
 	gtag('set', 'url_passthrough', true);
 </script>
-<!-- Transcend Consent Airgap Code-->
-	<script
-		data-cfasync="false"
-		src="https://cdntranscend.eventbrite.com/cm/f2747157-cf59-4ef1-8703-018defe51764/airgap.js"
-		data-sync-endpoint="https://synctranscend.eventbrite.com/consent-manager/f2747157-cf59-4ef1-8703-018defe51764"
-		data-ui-z-index="550"
-		data-tracker-overrides="[...] GoogleConsentMode:security_storage=Essential"
-		data-protect-realms="self"
-		data-ui-shadow-root="open"
-		data-local-sync="allow-network-observable"
-></script>
-<!-- END Transcend Consent Airgap Code -->
-<script>
-	const regimes = window.airgap && window.airgap.getRegimes ? window.airgap.getRegimes() : null;
-	const defaultRegime = regimes ? regimes.values().next().value : "CPRA";
-	console.log("Regime detected is "+ defaultRegime + ", loading transcend")
-	if (!EB.TranscendConsent.shouldDisableTranscend()) {
-	  try{
-		// Add the event listener
-		window.airgap.addEventListener(
-		  'sync',
-		  () => {
-			console.log("Sync done: Show banner")
-			window.transcend.ready((transcend) => {
-			  transcend.autoShowConsentManager();
-			})
-		  },
-		  { once: true } // we only want this to run on initial sync
-		);
-	  }catch(error) {
-		console.error("Failed to sync and load the banner")
-	  }  
-	} else {
-			console.log("Do not show banner")
-	}
-	dataLayer.push({ event: "transcendLoaded" });
-</script>
+
 		<script type="text/javascript">
 		//<![CDATA[
 		(function() {
