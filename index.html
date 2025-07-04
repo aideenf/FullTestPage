@@ -4,6 +4,9 @@
   <!-- Preload LCP image --> 
   <link rel="preload" as="image" type="image/avif" fetchpriority="high" href="https://eventbrite-495691932.imgix.net/aideen%20image?crop=focalpoint&fit=crop&w=600&auto=format,compress&q=75&sharp=10&fp-x=0.438446969697&fp-y=0.574626865672>
 
+  <!-- Preconnect to the server of the test Hero image, this can be removed later -->
+  <link rel="preconnect" href="https://eventbrite-495691932.imgix.net" crossorigin>
+
   <!-- Preconnect to critical origins early -->
   <link rel="preconnect" href="https://img.evbuc.com" crossorigin>
   <link rel="preconnect" href="https://cdn.evbstatic.com" crossorigin>
@@ -315,10 +318,11 @@ window.EB.TranscendConsent = (function () {
 	</picture></div>
 		<div data-testid="slide" aria-hidden="true" class="css-6dsmqv e1kx2rja3">
 			<picture data-testid="hero-image"> 
-				<source srcSet="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1033662333%2F2142623172483%2F1%2Foriginal.20250519-011843?w=480&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C138%2C2048%2C1024&amp;s=1396cbc32e11c6bd5aeb7c75278c2afc 480w,
-					https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1033662333%2F2142623172483%2F1%2Foriginal.20250519-011843?w=600&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C138%2C2048%2C1024&amp;s=457585bf0981e8f84dc2f8ea1c350ab6 600w,
-					https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1033662333%2F2142623172483%2F1%2Foriginal.20250519-011843?w=940&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C138%2C2048%2C1024&amp;s=2777597bee77fca947336209c56d51eb 940w
-				" sizes=" (max-width:480px) 480px, (max-width:600px) 600px, 940px "/><img width="600" height="300" alt="" src="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1033662333%2F2142623172483%2F1%2Foriginal.20250519-011843?w=600&amp;auto=format%2Ccompress&amp;q=75&amp;sharp=10&amp;rect=0%2C138%2C2048%2C1024&amp;s=457585bf0981e8f84dc2f8ea1c350ab6" loading="lazy" fetchpriority="low" data-testid="hero-img"/>
+				 <!-- note that the main image in the carousel is  --> 
+				<source srcSet="https://eventbrite-495691932.imgix.net/aideen%20image?crop=focalpoint&fit=crop&w=480&auto=format,compress&q=75&sharp=10&fp-x=0.438446969697&fp-y=0.574626865672 480w,
+					https://eventbrite-495691932.imgix.net/aideen%20image?crop=focalpoint&fit=crop&w=600&auto=format,compress&q=75&sharp=10&fp-x=0.438446969697&fp-y=0.574626865672 600w,
+					https://eventbrite-495691932.imgix.net/aideen%20image?crop=focalpoint&fit=crop&w=940&auto=format,compress&q=75&sharp=10&fp-x=0.438446969697&fp-y=0.574626865672 940w
+				" sizes=" (max-width:480px) 480px, (max-width:600px) 600px, 940px "/><img width="600" height="300" alt="" src="https://eventbrite-495691932.imgix.net/aideen%20image?crop=focalpoint&fit=crop&w=600&auto=format,compress&q=75&sharp=10&fp-x=0.438446969697&fp-y=0.574626865672" loading="lazy" fetchpriority="low" data-testid="hero-img"/>
 			</picture>
 		
 		</div><div data-testid="slide" aria-hidden="true" class="css-6dsmqv e1kx2rja3"><picture data-testid="hero-image"><source srcSet="
